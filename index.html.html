@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐒 Mundo de los Monos 🌴</title>
+  <style>
+    body {margin:0;font-family:Arial, sans-serif;background:#f5f5dc;}
+    header {background:#4caf50;color:white;text-align:center;padding:20px;}
+    nav {background:#333;display:flex;justify-content:center;flex-wrap:wrap;}
+    nav button {
+      background:#333;border:none;color:white;padding:14px 20px;
+      cursor:pointer;font-size:16px;transition:background 0.3s;
+    }
+    nav button:hover {background:#4caf50;}
+    nav button.active {background:#4caf50;}
+    .tab-content {
+      display:none;padding:30px;text-align:left;background:white;
+      max-width:900px;margin:20px auto;border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .tab-content img, .tab-content video {
+      max-width:100%;margin-top:15px;border-radius:10px;display:block;margin-left:auto;margin-right:auto;
+    }
+    ul {line-height:1.6;}
+    table {width:100%;border-collapse:collapse;margin-top:15px;}
+    th, td {border:1px solid #4caf50;padding:10px;text-align:center;}
+    th {background:#a5d6a7;}
+    td {background:#e8f5e9;}
+    form {display:flex;flex-direction:column;max-width:400px;margin:auto;text-align:left;}
+    form label {margin:10px 0 5px;}
+    form input, form textarea {padding:8px;border:1px solid #ccc;border-radius:6px;}
+    form button {margin-top:15px;padding:10px;background:#4caf50;color:white;border:none;cursor:pointer;}
+    form button:hover {background:#45a049;}
+    #juegoArea {margin-top:20px;padding:20px;background:#f0f0f0;border-radius:10px;min-height:150px;text-align:center;}
+    footer {background:#333;color:white;text-align:center;padding:15px;margin-top:20px;}
+    .game-grid {
+      display:grid;
+      grid-template-columns:repeat(4,80px);
+      grid-gap:10px;
+      justify-content:center;
+      margin-top:20px;
+    }
+    .tile {
+      width:80px;height:80px;background:#fff;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;
+      font-size:32px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2);
+      transition:transform 0.2s;
+    }
+    .tile.flipped {background:#4caf50;color:white;transform:scale(1.05);}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐒 Mundo de los Monos 🌴</h1>
+    <p>Explora su vida, hábitat, alimentación y curiosidades</p>
+  </header>
+
+  <nav>
+    <button class="tablink active" onclick="mostrar('inicio', this)">Inicio</button>
+    <button class="tablink" onclick="mostrar('caracteristicas', this)">Características</button>
+    <button class="tablink" onclick="mostrar('tipos', this)">Tipos de Monos</button>
+    <button class="tablink" onclick="mostrar('reproduccion', this)">Reproducción</button>
+    <button class="tablink" onclick="mostrar('clasificacion', this)">Clasificación</button>
+    <button class="tablink" onclick="mostrar('conservacion', this)">Conservación</button>
+    <button class="tablink" onclick="mostrar('importancia', this)">Importancia</button>
+    <button class="tablink" onclick="mostrar('curiosidades', this)">Curiosidades</button>
+    <button class="tablink" onclick="mostrar('video', this)">Video</button>
+    <button class="tablink" onclick="mostrar('formulario', this)">Formulario</button>
+    <button class="tablink" onclick="mostrar('juego', this)">Juego</button>
+  </nav>
+
+  <div class="tab-content" id="inicio" style="display:block;">
+    <h2>Bienvenido</h2>
+    <p>Los monos son criaturas fascinantes: inteligentes, ágiles y sociables. Son esenciales para los ecosistemas tropicales, ayudando a dispersar semillas y mantener el equilibrio natural.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Monkey_portrait.jpg" alt="Mono saludando">
+  </div>
+
+  <div class="tab-content" id="caracteristicas">
+    <h2>🐒 Características Principales</h2>
+    <ul>
+      <li>Son mamíferos del orden de los primates, con gran diversidad de especies.</li>
+      <li>Tienen visión binocular y manos prensiles con pulgares oponibles.</li>
+      <li>Viven en grupos sociales complejos con jerarquías y roles definidos.</li>
+      <li>Algunos usan herramientas para obtener comida o defenderse.</li>
+      <li>Su esperanza de vida varía entre 10 y 45 años según la especie.</li>
+    </ul>
+  <img src="https://img.lalr.co/cms/2024/11/28095517/Mono-Capuchino.jpg?r=4_3"
+       alt="Mono Capuchino"
+       style="max-width:100%; border-radius:12px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;">
+  </div>
+
+  <div class="tab-content" id="tipos">
+    <h2>🐵 Tipos de Monos</h2>
+    <p>Existen más de 260 especies de monos, divididas entre el Viejo y el Nuevo Mundo.</p>
+    <table>
+      <tr><th>Especie</th><th>Región</th><th>Alimentación</th></tr>
+      <tr><td>Mono Araña</td><td>América Central y del Sur</td><td>Frutas, hojas, semillas</td></tr>
+      <tr><td>Macaco Japonés</td><td>Japón</td><td>Frutas, insectos, raíces</td></tr>
+      <tr><td>Tití Pigmeo</td><td>Amazonas</td><td>Savias, frutas, insectos</td></tr>
+      <tr><td>Babuino</td><td>África</td><td>Plantas, carne, insectos</td></tr>
+      <tr><td>Mono Capuchino</td><td>América del Sur</td><td>Frutas, huevos, pequeños vertebrados</td></tr>
+      <tr><td>Mandril</td><td>África Central</td><td>Frutas, raíces, insectos</td></tr>
+      <tr><td>Mono Aullador</td><td>América Central</td><td>Hojas, flores, frutas</td></tr>
+    </table>
+  </div>
+
+  <div class="tab-content" id="reproduccion">
+    <h2>🧬 Reproducción</h2>
+    <p>Los monos presentan conductas de cortejo variadas, ciclos menstruales en las hembras y cuidado maternal prolongado.</p>
+    <ul>
+      <li>Gestación de 5 a 7 meses, normalmente con una sola cría.</li>
+      <li>Las madres protegen y enseñan a sus crías durante varios años.</li>
+      <li>Algunas especies muestran cooperación en el cuidado parental.</li>
+    </ul>
+  <img src="https://img.lalr.co/cms/2024/11/28095517/Mono-Capuchino.jpg?r=4_3"
+       alt="Mono Capuchino"
+       style="max-width:100%; border-radius:12px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;">
+  </div>
+
+  <div class="tab-content" id="clasificacion">
+    <h2>📚 Clasificación General</h2>
+    <ul>
+      <li><b>Monos del Viejo Mundo (Cercopithecoidea):</b> África y Asia. Sin colas prensiles. Ejemplo: babuinos, macacos.</li>
+      <li><b>Monos del Nuevo Mundo (Platyrrhini):</b> América Central y del Sur. Con colas prensiles. Ejemplo: capuchinos, titíes, monos araña.</li>
+    </ul>
+  <img src="https://img.lalr.co/cms/2024/11/28095517/Mono-Capuchino.jpg?r=4_3"
+       alt="Mono Capuchino"
+       style="max-width:100%; border-radius:12px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;">
+  </div>
+
+  <div class="tab-content" id="conservacion">
+    <h2>🌍 Conservación</h2>
+    <p>El 60% de las especies de primates están en riesgo de extinción. Las principales amenazas son:</p>
+    <ul>
+      <li>Deforestación y pérdida de hábitat.</li>
+      <li>Caza furtiva y comercio ilegal.</li>
+      <li>Cambio climático y contaminación.</li>
+      <li>Enfermedades y conflictos con humanos.</li>
+    </ul>
+  <img src="https://img.lalr.co/cms/2024/11/28095517/Mono-Capuchino.jpg?r=4_3"
+       alt="Mono Capuchino"
+       style="max-width:100%; border-radius:12px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;">
+  </div>
+
+  <div class="tab-content" id="importancia">
+    <h2>💡 Importancia</h2>
+    <p>Los monos son vitales para el equilibrio ecológico y también tienen un gran valor cultural y científico.</p>
+    <ul>
+      <li>Ayudan a regenerar bosques al dispersar semillas.</li>
+      <li>Son especies clave en investigaciones médicas y evolutivas.</li>
+      <li>Representan símbolos en muchas culturas.</li>
+    </ul>
+  <img src="https://img.lalr.co/cms/2024/11/28095517/Mono-Capuchino.jpg?r=4_3"
+       alt="Mono Capuchino"
+       style="max-width:100%; border-radius:12px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;">
+  </div>
+
+  <div class="tab-content" id="curiosidades">
+    <h2>✨ Curiosidades</h2>
+    <ul>
+      <li>Algunos monos pueden reconocerse en el espejo.</li>
+      <li>Los capuchinos usan piedras para romper frutos.</li>
+      <li>El aullido del mono aullador se puede escuchar a 5 km.</li>
+      <li>Los titíes pigmeos son los monos más pequeños del mundo.</li>
+    </ul>
+  <img src="https://img.lalr.co/cms/2024/11/28095517/Mono-Capuchino.jpg?r=4_3"
+       alt="Mono Capuchino"
+       style="max-width:100%; border-radius:12px; margin-top:15px; display:block; margin-left:auto; margin-right:auto;">
+  </div>
+
+  <div class="tab-content" id="video">
+    <h2>🎥 Video: Familia de Monos</h2>
+    <video src="https://cdn.pixabay.com/video/2023/01/04/145303-786449066_large.mp4" width="640" height="360" controls preload="metadata"></video>
+  </div>
+
+  <div class="tab-content" id="formulario">
+    <h2>📩 Formulario de Contacto</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="email">Correo:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <div class="tab-content" id="juego">
+    <h2>🎮 Juego: Empareja las Fichas</h2>
+    <p>Haz clic en las fichas para encontrar las parejas iguales 🐒🍌🌴⭐</p>
+    <div id="juegoArea" class="game-grid"></div>
+    <p id="mensajeJuego" style="text-align:center;font-weight:bold;margin-top:15px;"></p>
+  </div>
+
+  <footer>
+    <p>© 2025 Mundo de los Monos - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    function mostrar(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(div => div.style.display = "none");
+      document.querySelectorAll('.tablink').forEach(b => b.classList.remove("active"));
+      document.getElementById(id).style.display = "block";
+      btn.classList.add("active");
+    }
+
+    const emojis = ['🐒','🍌','🌴','⭐','🐒','🍌','🌴','⭐'];
+    let seleccionadas = [];
+    let bloqueadas = false;
+    let encontradas = 0;
+
+    function iniciarJuego() {
+      const area = document.getElementById('juegoArea');
+      area.innerHTML = '';
+      document.getElementById('mensajeJuego').textContent = '';
+      const mezcla = [...emojis].sort(() => 0.5 - Math.random());
+      mezcla.forEach((em, i) => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        tile.dataset.valor = em;
+        tile.onclick = () => voltear(tile);
+        area.appendChild(tile);
+      });
+      seleccionadas = [];
+      encontradas = 0;
+    }
+
+    function voltear(tile) {
+      if (bloqueadas || tile.classList.contains('flipped')) return;
+      tile.classList.add('flipped');
+      tile.textContent = tile.dataset.valor;
+      seleccionadas.push(tile);
+      if (seleccionadas.length === 2) {
+        bloqueadas = true;
+        setTimeout(() => {
+          if (seleccionadas[0].dataset.valor === seleccionadas[1].dataset.valor) {
+            encontradas += 1;
+            if (encontradas === emojis.length/2) {
+              document.getElementById('mensajeJuego').textContent = '🎉 ¡Ganaste! Has encontrado todas las parejas 🐵';
+            }
+          } else {
+            seleccionadas.forEach(t => {t.classList.remove('flipped'); t.textContent = '';});
+          }
+          seleccionadas = [];
+          bloqueadas = false;
+        }, 800);
+      }
+    }
+
+    iniciarJuego();
+  </script>
+</body>
+</html>
